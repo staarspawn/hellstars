@@ -1,10 +1,10 @@
 #!/bin/bash
 
-# Installer Zsh
-echo "Installation de Zsh..."
+# Install Zsh
+echo "Installing Zsh..."
 sudo pacman -S --noconfirm zsh
 
-# Installer Oh My Zsh
+# Install Oh My Zsh
 echo "Installation de Oh My Zsh..."
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" --unattended
 
@@ -19,13 +19,13 @@ git clone https://github.com/zdharma-continuum/fast-syntax-highlighting.git $ZSH
 git clone --depth 1 https://github.com/marlonrichert/zsh-autocomplete.git $ZSH_CUSTOM/plugins/zsh-autocomplete
 
 # Modifier le fichier .zshrc pour activer les plugins
-echo "Mise à jour de .zshrc..."
+echo "Update .zshrc..."
 sed -i 's/^plugins=(.*)/plugins=(git zsh-autosuggestions zsh-syntax-highlighting fast-syntax-highlighting zsh-autocomplete)/' ~/.zshrc
 
 # Modifier le thème Zsh
-echo "Changement du thème en agnoster..."
+echo "Update themes..."
 sed -i 's/^ZSH_THEME=".*"/ZSH_THEME="agnoster"/' ~/.zshrc
 
 # Lancer Zsh
-echo "Lancement de Zsh..."
+echo "A new shell has spawn..."
 exec zsh
